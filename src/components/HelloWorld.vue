@@ -16,7 +16,7 @@ export default {
   },
   created() {
     axios
-      .get('http://localhost:3000/api/imgUToken')
+      .get('http://localhost:3001/api/imgUToken')
       .then(function(response) {
         console.log(response);
       })
