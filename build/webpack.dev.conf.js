@@ -64,7 +64,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    // 第三方库
+    new webpack.ProvidePlugin({
+      plupload:"plupload",
+      qiniu:"qiniu-js"
+
+    }),
+    // 优化第三方，提出
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['qiniu','plupload'],
+      filename: '[name].js',
+      minChunks: 2
+    })    
   ]
 })
 

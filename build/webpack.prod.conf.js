@@ -115,7 +115,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    // 第三方库
+    new webpack.ProvidePlugin({
+      plupload:"plupload"
+    })
   ]
 })
 
